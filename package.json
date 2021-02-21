@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
-    "serve-favicon": "^2.5.0"
+    "jquery-migrate": "3.0.0",
+    "smoothscroll-for-websites": "^1.4.10"
   }
 }
