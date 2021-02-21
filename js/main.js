@@ -30,7 +30,7 @@ $('#nav').affix({
 	var index=0;
 	$(document).scroll(function(){
 		var top = $('#skills').height()-$(window).scrollTop();
-		console.log(top)
+		// console.log(top)
 		if(top<-300){
 			if(index==0){	
 			
@@ -50,7 +50,7 @@ $('#nav').affix({
 
 
   	// Portfolio isotope filter
-    $(window).load(function() {
+    $(window).on('load', function() {
         var $container = $('.portfolio-items');
         $container.isotope({
             filter: '*',
