@@ -1,5 +1,13 @@
 {
+  "scripts": {
+    "dev": "parcel serve index.html",
+    "build": "parcel build index.html"
+  },
   "devDependencies": {
     "parcel": "^2.0.0-beta.1"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "serve-favicon": "^2.5.0"
   }
 }
