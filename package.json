@@ -4,7 +4,16 @@
     "build": "parcel build index.html"
   },
   "devDependencies": {
-    "parcel": "^2.0.0-beta.1"
+    "@parcel/optimizer-cssnano": "2.0.0-nightly.607",
+    "@parcel/optimizer-htmlnano": "2.0.0-nightly.607",
+    "@parcel/packager-css": "2.0.0-nightly.607",
+    "@parcel/packager-html": "2.0.0-nightly.607",
+    "@parcel/transformer-css": "2.0.0-nightly.607",
+    "@parcel/transformer-html": "2.0.0-nightly.607",
+    "@parcel/transformer-postcss": "2.0.0-nightly.607",
+    "@parcel/transformer-posthtml": "2.0.0-nightly.607",
+    "parcel": "^2.0.0-beta.1",
+    "postcss": "^8.2.1"
   },
   "dependencies": {
     "jquery": "^3.5.1",
