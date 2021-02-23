@@ -3,6 +3,9 @@
     "dev": "parcel serve index.html",
     "build": "parcel build index.html"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
     "@parcel/optimizer-cssnano": "2.0.0-nightly.607",
     "@parcel/optimizer-htmlnano": "2.0.0-nightly.607",
