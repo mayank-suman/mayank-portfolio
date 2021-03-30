@@ -1,7 +1,7 @@
-var jquery = require("jquery");
+var jquery = require('jquery');
 window.$ = window.jQuery = jquery;
 
-require("jquery-migrate");
+require('jquery-migrate');
 jQuery.migrateMute = true;
 
-import smoothscroll from "smoothscroll-for-websites";
+import smoothscroll from 'smoothscroll-for-websites';
