@@ -58,7 +58,7 @@
         queue: false,
       },
     });
-    $('.cat a').click(function () {
+    $('.cat a').on('click', function () {
       $('.cat .active').removeClass('active');
       $(this).addClass('active');
       var selector = $(this).attr('data-filter');
