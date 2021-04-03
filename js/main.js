@@ -1,8 +1,10 @@
-import $ from 'jquery';
+import affix from 'bootstrap-sass/assets/javascripts/bootstrap/affix';
+import isotope from 'isotope-layout';
 
 ('use strict');
+
 (function () {
-  /* $('a.page-scroll').on('click', function () {
+  $('a.page-scroll').on('click', function () {
     if (
       location.pathname.replace(/^\//, '') ==
         this.pathname.replace(/^\//, '') &&
@@ -14,20 +16,20 @@ import $ from 'jquery';
         $('html,body').animate(
           {
             scrollTop: target.offset().top - 40,
-          },s
+          },
           900
         );
         return false;
       }
     }
-  }); */
+  });
 
   // affix the navbar after scroll below header
-  // $('#nav').affix({
-  //   offset: {
-  //     top: $('header').height(),
-  //   },
-  // });
+  $('#nav').affix({
+    offset: {
+      top: $('header').height(),
+    },
+  });
 
   // skills chart
   //var windowBottom = $(window).height();
@@ -51,8 +53,8 @@ import $ from 'jquery';
 
   // Portfolio isotope filter
   /* $(window).on('load', function () {
-    var $container = $('.portfolio-items');
-    $container.isotope({
+    var $container = document.querySelector('.portfolio-items');
+    new isotope($container, {
       filter: '*',
       animationOptions: {
         duration: 750,
@@ -60,11 +62,12 @@ import $ from 'jquery';
         queue: false,
       },
     });
+
     $('.cat a').on('click', function () {
       $('.cat .active').removeClass('active');
       $(this).addClass('active');
       var selector = $(this).attr('data-filter');
-      $container.isotope({
+      new isotope($container, {
         filter: selector,
         animationOptions: {
           duration: 750,
