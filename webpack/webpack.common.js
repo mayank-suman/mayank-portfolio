@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'cheap-module-source-map',
   entry: './src/js/app.js',
   output: {
     filename: 'app.js',
@@ -46,10 +44,4 @@ module.exports = {
       jQuery: 'jquery',
     }),
   ],
-  devServer: {
-    contentBase: './',
-    hot: true,
-    liveReload: true,
-    watchContentBase: true,
-  },
 };

@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "dev": "webpack serve --config webpack.config.js"
+    "build": "webpack --config webpack/webpack.prod.js",
+    "dev": "webpack serve --config webpack/webpack.dev.js"
   },
   "browserslist": [
     "defaults",
@@ -16,7 +16,8 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.30.0",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
     "bootstrap-sass": "^3.4.1",

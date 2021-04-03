@@ -6,7 +6,6 @@ import affix from 'bootstrap-sass/assets/javascripts/bootstrap/affix';
 import './thirdParty/easypiechart.js';
 
 ('use strict');
-
 (function () {
   SmoothScroll({ stepSize: 20 });
 
