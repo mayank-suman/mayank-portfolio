@@ -1,10 +1,15 @@
+import SmoothScroll from 'smoothscroll-for-websites';
 import affix from 'bootstrap-sass/assets/javascripts/bootstrap/affix';
-import isotope from 'isotope-layout';
+// import isotope from 'isotope-layout';
 // import EasyPieChart from 'easy-pie-chart/dist/easypiechart.js';
+
 import '/js/thirdParty/easypiechart.js';
+
 ('use strict');
 
 (function () {
+  SmoothScroll({ stepSize: 20 });
+
   $('a.page-scroll').on('click', function () {
     if (
       location.pathname.replace(/^\//, '') ==
