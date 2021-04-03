@@ -1,6 +1,7 @@
 import affix from 'bootstrap-sass/assets/javascripts/bootstrap/affix';
 import isotope from 'isotope-layout';
-
+// import EasyPieChart from 'easy-pie-chart/dist/easypiechart.js';
+import '/js/thirdParty/easypiechart.js';
 ('use strict');
 
 (function () {
@@ -34,7 +35,7 @@ import isotope from 'isotope-layout';
   // skills chart
   //var windowBottom = $(window).height();
   var index = 0;
-  /* $(document).on('scroll', function () {
+  $(document).on('scroll', function () {
     var top = $('#skills').height() - $(window).scrollTop();
     // console.log(top)
     if (top < -300) {
@@ -48,8 +49,29 @@ import isotope from 'isotope-layout';
       }
       index++;
     }
+  });
+
+  // npm version of pie chart
+  /* var index = 0;
+  var chartContainers = document.querySelectorAll('.chart');
+  const chartOptions = {
+    easing: 'easeOutBounce',
+    onStep: function (from, to, percent) {
+      $(this.el).find('.percent').text(Math.round(percent));
+    },
+  };
+
+  $(document).on('scroll', function () {
+    var top = $('#skills').height() - $(window).scrollTop();
+    if (top < -300) {
+      if (index == 0) {
+        chartContainers.forEach((chartEl) => {
+          new EasyPieChart(chartEl, chartOptions);
+        });
+      }
+      index++;
+    }
   }); */
-  //console.log(nagativeValue)
 
   // Portfolio isotope filter
   /* $(window).on('load', function () {
@@ -78,19 +100,6 @@ import isotope from 'isotope-layout';
       return false;
     });
   }); */
-
-  // CounterUp
-  /* if ($('span.count').length > 0) {
-    $('span.count').counterUp({
-      delay: 10, // the delay time in ms
-      time: 1500, // the speed time in ms
-    });
-  } */
-
-  // Pretty Photo
-  // $("a[rel^='prettyPhoto']").prettyPhoto({
-  //   social_tools: false,
-  // });
 
   /* 
   const headerEle = document.querySelector("#header");
