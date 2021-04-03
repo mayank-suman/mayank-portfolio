@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.4.1",
+    "easy-pie-chart": "^2.1.7",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.6.0",
     "jquery-migrate": "3.3.2",
