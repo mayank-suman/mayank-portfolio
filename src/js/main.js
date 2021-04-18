@@ -1,5 +1,14 @@
-'use strict';
+import SmoothScroll from 'smoothscroll-for-websites';
+import affix from 'bootstrap-sass/assets/javascripts/bootstrap/affix';
+// import isotope from 'isotope-layout';
+// import EasyPieChart from 'easy-pie-chart/dist/easypiechart.js';
+import './thirdParty/easypiechart.js';
+import desertSelfImage from '../../public/img/pers/desert-self2.jpg?sizes[]=300,sizes[]=600,sizes[]=1024&format=webp';
+
+('use strict');
 (function () {
+  SmoothScroll({ stepSize: 20 });
+
   $('a.page-scroll').on('click', function () {
     if (
       location.pathname.replace(/^\//, '') ==
@@ -45,12 +54,33 @@
       index++;
     }
   });
-  //console.log(nagativeValue)
+
+  // npm version of pie chart
+  /* var index = 0;
+  var chartContainers = document.querySelectorAll('.chart');
+  const chartOptions = {
+    easing: 'easeOutBounce',
+    onStep: function (from, to, percent) {
+      $(this.el).find('.percent').text(Math.round(percent));
+    },
+  };
+
+  $(document).on('scroll', function () {
+    var top = $('#skills').height() - $(window).scrollTop();
+    if (top < -300) {
+      if (index == 0) {
+        chartContainers.forEach((chartEl) => {
+          new EasyPieChart(chartEl, chartOptions);
+        });
+      }
+      index++;
+    }
+  }); */
 
   // Portfolio isotope filter
-  $(window).on('load', function () {
-    var $container = $('.portfolio-items');
-    $container.isotope({
+  /* $(window).on('load', function () {
+    var $container = document.querySelector('.portfolio-items');
+    new isotope($container, {
       filter: '*',
       animationOptions: {
         duration: 750,
@@ -58,11 +88,12 @@
         queue: false,
       },
     });
+
     $('.cat a').on('click', function () {
       $('.cat .active').removeClass('active');
       $(this).addClass('active');
       var selector = $(this).attr('data-filter');
-      $container.isotope({
+      new isotope($container, {
         filter: selector,
         animationOptions: {
           duration: 750,
@@ -72,20 +103,7 @@
       });
       return false;
     });
-  });
-
-  // CounterUp
-  if ($('span.count').length > 0) {
-    $('span.count').counterUp({
-      delay: 10, // the delay time in ms
-      time: 1500, // the speed time in ms
-    });
-  }
-
-  // Pretty Photo
-  $("a[rel^='prettyPhoto']").prettyPhoto({
-    social_tools: false,
-  });
+  }); */
 
   /* 
   const headerEle = document.querySelector("#header");
@@ -98,4 +116,17 @@
     introEle.style.backgroundPositionY = -e.offsetY * 0.02 + "px";
   }); 
   */
+
+  createProfileImage();
 })();
+
+function createProfileImage() {
+  const img = new Image();
+
+  img.src = desertSelfImage.src;
+  img.srcset = desertSelfImage.srcSet;
+  img.setAttribute('sizes', '200px');
+  img.classList.add('img-responsive');
+
+  document.querySelector('.profile-image').appendChild(img);
+}
