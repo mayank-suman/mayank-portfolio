@@ -197,10 +197,11 @@ hr {
 }
 
 .background-filter::after {
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  /* -webkit-backdrop-filter: grayscale(0.3); */
-  /* backdrop-filter: grayscale(0.3); */
+  // -webkit-backdrop-filter: blur(2px);
+  // backdrop-filter: blur(2px);
+  // -webkit-backdrop-filter: grayscale(0.3);
+  // backdrop-filter: grayscale(0.3);
+  background: rgba(43, 34, 34, 0.2);
   content: '';
   display: block;
   position: absolute;
@@ -229,12 +230,20 @@ hr {
 #about .about-text {
   margin-left: 10px;
 }
-#about img {
+
+#about .profile-image {
   border-radius: 50%;
   width: 200px;
   height: 200px;
   display: inline-block;
+  border: 2px solid #7bc3d1;
+  overflow: hidden;
 }
+
+#about img {
+  transform: scale(1.2);
+}
+
 #about p {
   margin-top: 20px;
   margin-bottom: 30px;
