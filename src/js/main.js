@@ -2,8 +2,8 @@ import SmoothScroll from 'smoothscroll-for-websites';
 import affix from 'bootstrap-sass/assets/javascripts/bootstrap/affix';
 // import isotope from 'isotope-layout';
 // import EasyPieChart from 'easy-pie-chart/dist/easypiechart.js';
-
 import './thirdParty/easypiechart.js';
+import desertSelfImage from '../../public/img/pers/desert-self2.jpg?sizes[]=300,sizes[]=600,sizes[]=1024&format=webp';
 
 ('use strict');
 (function () {
@@ -116,4 +116,17 @@ import './thirdParty/easypiechart.js';
     introEle.style.backgroundPositionY = -e.offsetY * 0.02 + "px";
   }); 
   */
+
+  createProfileImage();
 })();
+
+function createProfileImage() {
+  const img = new Image();
+
+  img.src = desertSelfImage.src;
+  img.srcset = desertSelfImage.srcSet;
+  img.setAttribute('sizes', '200px');
+  img.classList.add('img-responsive');
+
+  document.querySelector('.profile-image').appendChild(img);
+}
