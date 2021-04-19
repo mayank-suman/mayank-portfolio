@@ -188,12 +188,27 @@ hr {
   padding: 100px 0;
   text-align: center;
   color: #fff;
-  background: url(/public/img/intro-bg-cliff.jpeg) no-repeat center top;
+  background: url(/public/img/intro-bg-cliff.jpeg?format=webp) no-repeat center
+    top;
   background-color: #7bc3d1;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+}
+
+@media (max-width: 480px) {
+  .intro {
+    background: url(/public/img/intro-bg-cliff.jpeg?size=480&format=webp)
+      no-repeat center top;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    background: url(/public/img/intro-bg-cliff.jpeg?size=768&format=webp)
+      no-repeat center top;
+  }
 }
 
 .background-filter::after {
