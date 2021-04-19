@@ -118,6 +118,7 @@ import desertSelfImage from '../../public/img/pers/desert-self2.jpg?sizes[]=300,
   */
 
   createProfileImage();
+  showHtml();
 })();
 
 function createProfileImage() {
@@ -129,4 +130,9 @@ function createProfileImage() {
   img.classList.add('img-responsive');
 
   document.querySelector('.profile-image').appendChild(img);
+}
+
+function showHtml() {
+  const body = document.querySelector('body');
+  body.classList.remove('htmlHidden');
 }
