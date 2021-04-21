@@ -13,51 +13,13 @@ import desertSelfImage from '../../public/img/pers/desert-self2.jpg?sizes[]=300,
   // BUG:fix smooth scroll plugin not working
   SmoothScroll({ stepSize: 20 });
 
-  $('a.page-scroll').on('click', function () {
-    if (
-      location.pathname.replace(/^\//, '') ==
-        this.pathname.replace(/^\//, '') &&
-      location.hostname == this.hostname
-    ) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html,body').animate(
-          {
-            scrollTop: target.offset().top - 40,
-          },
-          900
-        );
-        return false;
-      }
-    }
-  });
+  initLinkOnClickScroll();
 
-  // affix the navbar after scroll below header
-  $('#nav').affix({
-    offset: {
-      top: $('header').height(),
-    },
-  });
+  initNavbarAffix();
 
-  // skills chart
-  //var windowBottom = $(window).height();
-  var index = 0;
-  $(document).on('scroll', function () {
-    var top = $('#skills').height() - $(window).scrollTop();
-    // console.log(top)
-    if (top < -300) {
-      if (index == 0) {
-        $('.chart').easyPieChart({
-          easing: 'easeOutBounce',
-          onStep: function (from, to, percent) {
-            $(this.el).find('.percent').text(Math.round(percent));
-          },
-        });
-      }
-      index++;
-    }
-  });
+  initPieChartLoadOnscroll();
+
+  createProfileImage();
 
   // npm version of pie chart
   /* var index = 0;
@@ -120,9 +82,59 @@ import desertSelfImage from '../../public/img/pers/desert-self2.jpg?sizes[]=300,
     introEle.style.backgroundPositionY = -e.offsetY * 0.02 + "px";
   }); 
   */
-
-  createProfileImage();
 })();
+
+// skills chart
+//var windowBottom = $(window).height();
+function initPieChartLoadOnscroll() {
+  var index = 0;
+  $(document).on('scroll', function () {
+    var top = $('#skills').height() - $(window).scrollTop();
+    // console.log(top)
+    if (top < -300) {
+      if (index == 0) {
+        $('.chart').easyPieChart({
+          easing: 'easeOutBounce',
+          onStep: function (from, to, percent) {
+            $(this.el).find('.percent').text(Math.round(percent));
+          },
+        });
+      }
+      index++;
+    }
+  });
+}
+
+function initLinkOnClickScroll() {
+  $('a.page-scroll').on('click', function () {
+    if (
+      location.pathname.replace(/^\//, '') ==
+        this.pathname.replace(/^\//, '') &&
+      location.hostname == this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html,body').animate(
+          {
+            scrollTop: target.offset().top - 40,
+          },
+          900
+        );
+        return false;
+      }
+    }
+  });
+}
+
+// affix the navbar after scroll below header
+function initNavbarAffix() {
+  $('#nav').affix({
+    offset: {
+      top: $('header').height(),
+    },
+  });
+}
 
 function createProfileImage() {
   const img = new Image();
