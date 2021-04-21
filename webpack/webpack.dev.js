@@ -5,7 +5,8 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   devServer: {
-    contentBase: './',
+    contentBase: './public',
+    contentBasePublicPath: '/assets',
     hot: true,
     liveReload: true,
     watchContentBase: true,
