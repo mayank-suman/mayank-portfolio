@@ -2,11 +2,15 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const assetsFolderName = 'assets';
+
 module.exports = {
   entry: './src/js/app.js',
   output: {
-    filename: 'app.js',
+    filename: '[name].[contenthash].js',
+    assetModuleFilename: `${assetsFolderName}/[hash][ext][query]`,
     path: path.resolve(__dirname, '../dist'),
+    clean: true,
   },
   module: {
     rules: [
@@ -16,14 +20,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|svg|gif)$/i,
@@ -38,8 +35,8 @@ module.exports = {
         use: {
           loader: 'responsive-loader',
           options: {
-            // If you want to enable sharp support:
             adapter: require('responsive-loader/sharp'),
+            name: `${assetsFolderName}/responsive-images/[hash]-[width].[ext]`,
           },
         },
       },
