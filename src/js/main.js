@@ -7,6 +7,7 @@ import desertSelfImage from '../../public/img/pers/desert-self2.jpg?sizes[]=300,
 
 ('use strict');
 (function () {
+  // BUG:fix smooth scroll plugin not working
   SmoothScroll({ stepSize: 20 });
 
   $('a.page-scroll').on('click', function () {
