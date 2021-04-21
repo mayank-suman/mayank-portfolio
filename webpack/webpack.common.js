@@ -9,7 +9,7 @@ const assetsFolderName = 'assets';
 // BUG: hmr not working
 // BUG: fix mobile nav not working
 module.exports = {
-  entry: './src/js/app.js',
+  entry: './src/js/index.js',
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: `${assetsFolderName}/[hash][ext][query]`,
