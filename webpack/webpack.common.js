@@ -4,8 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const assetsFolderName = 'assets';
 
+// TODO: update dummy text with real one
 module.exports = {
-  entry: './src/js/app.js',
+  entry: './src/js/index.js',
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: `${assetsFolderName}/[hash][ext][query]`,
