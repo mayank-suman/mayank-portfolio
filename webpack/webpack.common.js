@@ -5,9 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const assetsFolderName = 'assets';
 
 // TODO: update dummy text with real one
-// TODO: set DP imp tag with width and height
-// BUG: hmr not working
-// BUG: fix mobile nav not working
 module.exports = {
   entry: './src/js/index.js',
   output: {
