@@ -1,2 +1,8 @@
 import '../sass/index.scss';
-import './app';
+import initApp from './app';
+
+if (module.hot) {
+  module.hot.accept('./app.js', () => {
+    initApp();
+  });
+}

@@ -8,7 +8,5 @@ module.exports = merge(common, {
     contentBase: './public',
     contentBasePublicPath: '/assets',
     hot: true,
-    liveReload: true,
-    watchContentBase: true,
   },
 });
