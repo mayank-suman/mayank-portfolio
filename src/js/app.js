@@ -11,6 +11,7 @@ import desertSelfImage from '../../public/img/pers/desert-self2.jpg?sizes[]=300,
 
 // skills chart
 //var windowBottom = $(window).height();
+// TODO: add progressive image loading
 function initPieChartLoadOnscroll() {
   var index = 0;
   $(document).on('scroll', function () {
