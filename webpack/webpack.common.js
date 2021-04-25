@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/js/index.js',
   output: {
     filename: '[name].[contenthash].js',
-    assetModuleFilename: `${assetsFolderName}/[hash][ext][query]`,
+    assetModuleFilename: `${assetsFolderName}/[name]-[hash][ext][query]`,
     path: path.resolve(__dirname, '../dist'),
     clean: true,
   },
