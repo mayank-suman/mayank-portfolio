@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/js/index.js',
   output: {
     filename: '[name].[contenthash].js',
-    assetModuleFilename: `${assetsFolderName}/[hash][ext][query]`,
+    assetModuleFilename: `${assetsFolderName}/[name]-[hash][ext][query]`,
     path: path.resolve(__dirname, '../dist'),
     clean: true,
   },
@@ -37,7 +37,7 @@ module.exports = {
           loader: 'responsive-loader',
           options: {
             adapter: require('responsive-loader/sharp'),
-            name: `${assetsFolderName}/responsive-images/[hash]-[width].[ext]`,
+            name: `${assetsFolderName}/responsive-images/[name]-[hash]-[width].[ext]`,
           },
         },
       },
@@ -46,6 +46,25 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      templateParameters: (compilation) => {
+        const displayImage = compilation
+          .getAssets()
+          .find((file) => file.name.indexOf('desert-self2') > -1);
+
+        return {
+          title: 'Mayank Suman - A Front end engineer',
+          siteName: 'Mayank Suman Portfolio',
+          description:
+            'I am Mayank Suman a frontend engineer who is creating and fixing UIs for over 9 years. I am well-versed in technologies like HTML, CSS, JS and their related frameworks / Libraries like reactJS, etc.',
+          keywords:
+            'html, css, javascript, react, reactjs, frontend, developer, engineer, mayank suman, development',
+          author: 'Mayank Suman',
+          image: displayImage.name,
+          imageAlt: 'Mayank Suman display picture',
+          url: 'https://www.mayanksuman.dev',
+          twitterUserId: 'mayanksuman7',
+        };
+      },
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
