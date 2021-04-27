@@ -41,6 +41,10 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(pdf)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [

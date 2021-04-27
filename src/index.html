@@ -11,6 +11,8 @@
     <meta property="og:title" content="<%= title %>" />
     <meta property="og:description" content="<%= description %>" />
     <meta property="og:type" content="website" />
+    <!-- BUG: image preview not working on linked -->
+    <!-- TODO: image need to be changed -->
     <meta property="og:image" name="image" content="/<%= image %>" />
     <meta property="og:url" content="<%= url %>" />
 
@@ -171,13 +173,13 @@
                 ground. I worked on some cool side project like
                 <b>
                   <a target="_blank" href="http://greatlakes.mayanksuman.dev/">
-                    Great lakes
+                    Great lakes.
                   </a>
                 </b>
               </p>
               <!-- Link resume here -->
               <p class="text-center">
-                <a class="btn btn-primary" href="#"
+                <a class="btn btn-primary" href="#" id="download-button"
                   ><i class="fa fa-download"></i> Download Resume</a
                 >
               </p>

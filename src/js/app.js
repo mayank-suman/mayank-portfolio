@@ -6,6 +6,7 @@ import transition from 'bootstrap-sass/assets/javascripts/bootstrap/transition';
 // import EasyPieChart from 'easy-pie-chart/dist/easypiechart.js';
 import './thirdParty/easypiechart.js';
 import desertSelfImage from '../../public/img/pers/desert-self2.jpg?sizes[]=300,sizes[]=600,sizes[]=1024&format=webp';
+import resumeDoc from '../../public/docs/mayank_cv.pdf';
 
 ('use strict');
 
@@ -122,6 +123,12 @@ function initGA() {
   );
 }
 
+const setDownloadButtonAttribsWithResumePdf = () => {
+  const downloadBtn = document.querySelector('#download-button');
+  downloadBtn.setAttribute('href', resumeDoc);
+  downloadBtn.setAttribute('download', 'mayank_resume.pdf');
+};
+
 // npm version of pie chart
 /* var index = 0;
   var chartContainers = document.querySelectorAll('.chart');
@@ -198,6 +205,8 @@ function initApp() {
   createProfileImage();
 
   initGA();
+
+  setDownloadButtonAttribsWithResumePdf();
 }
 
 initApp();
