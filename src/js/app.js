@@ -80,40 +80,40 @@ function showHtml() {
   body.classList.remove('htmlHidden');
 }
 
-function insertScriptAsync(url, callback) {
-  function loadError(oError) {
-    throw new URIError(
-      'The script ' + oError.target.src + " didn't load correctly."
-    );
-  }
-
-  var newScript = document.createElement('script');
-  newScript.onerror = loadError;
-
-  if (callback) {
-    newScript.onload = callback;
-  }
-
-  document.currentScript.parentNode.insertBefore(
-    newScript,
-    document.currentScript
-  );
-
-  newScript.src = url;
-}
-
-function addGATags() {
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'G-D0GP8LKDT2');
-}
-
 function initGA() {
+  const insertScriptAsync = (url, callback) => {
+    function loadError(oError) {
+      throw new URIError(
+        'The script ' + oError.target.src + " didn't load correctly."
+      );
+    }
+
+    var newScript = document.createElement('script');
+    newScript.onerror = loadError;
+
+    if (callback) {
+      newScript.onload = callback;
+    }
+
+    document.currentScript.parentNode.insertBefore(
+      newScript,
+      document.currentScript
+    );
+
+    newScript.src = url;
+  };
+
+  const addGATags = () => {
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-D0GP8LKDT2');
+  };
+
   insertScriptAsync(
     'https://www.googletagmanager.com/gtag/js?id=G-D0GP8LKDT2',
     () => {
